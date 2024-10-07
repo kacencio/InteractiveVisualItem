@@ -1,13 +1,13 @@
-let cookieCount = 0;
-let cookieDimension = 450;
-let cookieX = 225;
-let cookieY = 225;
-let cookie_img;
+let treeCount = 0;
+let treeDimension = 450;
+let treeX = 225;
+let treeY = 225;
+let tree_img;
 let clickSound;
 
 
 function preload() {
-  cookie_img = loadImage('img/cookie_img.png');
+  tree_img = loadImage('img/tree_img.png');
   clickSound = loadSound('click.mp3');
 }
 
@@ -17,26 +17,36 @@ function setup() {
 }
 
 function draw() {
-  background(110,70,50);
-text(round(cookieCount), 425, 100);
-text(("Click on the cookie"), 280, 800);
-text(("to gain more!"),       330, 845);
-image(cookie_img, cookieX, cookieY, cookieDimension, cookieDimension);
+  background(100,160,200);
+
+fill(15, 100, 10);
+rect(0, 630, 900);
+
+fill(0, 0, 0);
+text(round(treeCount), 425, 100);
+text(("Trees Grown"), 320, 150);
+text(("Click on the tree"), 300, 800);
+text(("to grow more!"),       330, 845);
+
+image(tree_img, treeX, treeY, treeDimension, treeDimension);
 }
+
 
 function mousePressed() {
   if (
-    mouseX > cookieX && mouseX < cookieX + cookieDimension
-    /*WITHIN the X coordinate range of cookie*/
-  &&
-    mouseY > cookieY && mouseY < cookieY + cookieDimension) 
-      /*WITHIN the Y coordinate range of cookie*/
+    mouseX > treeX 
+    && 
+    mouseX < treeX + treeDimension 
+    && 
+    mouseY > treeY 
+    && 
+    mouseY < treeY + treeDimension)
   
 {
-cookieCount=(cookieCount+1);
-  cookieDimension=(425);
-  cookieX = (cookieX+12.5);
-  cookieY = (cookieY+12.5);
+treeCount=(treeCount+1);
+  treeDimension=(425);
+  treeX = (treeX+12.5);
+  treeY = (treeY+12.5);
   clickSound.play();
 }
 
@@ -47,9 +57,9 @@ else
 }
 
 function mouseReleased() {
-  cookieDimension = 450;
-  cookieX = (225);
-  cookieY = (225);
+  treeDimension = 450;
+  treeX = (225);
+  treeY = (225);
 }
 
 
