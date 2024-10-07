@@ -26,8 +26,6 @@ image(cookie_img, cookieX, cookieY, cookieDimension, cookieDimension);
 
 function mousePressed() {
   if (
-    mousePressed 
-  && 
     mouseX > cookieX && mouseX < cookieX + cookieDimension
     /*WITHIN the X coordinate range of cookie*/
   &&
