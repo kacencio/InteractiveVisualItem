@@ -7,7 +7,7 @@ let clickSound;
 
 
 function preload() {
-  cookie_img = loadImage('../img/cookie_img.png');
+  cookie_img = loadImage('img/cookie_img.png');
   clickSound = loadSound('click.mp3');
 }
 
